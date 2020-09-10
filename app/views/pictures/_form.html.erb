@@ -19,9 +19,7 @@
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
-  <div class="field">
-    <% picture.user_id %>
-  </div>
+  
   <%= form.submit %>
 <% end %>
 <%= link_to "投稿一覧画面にもどる", pictures_path %>

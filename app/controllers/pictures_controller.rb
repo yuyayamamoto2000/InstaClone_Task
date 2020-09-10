@@ -19,7 +19,7 @@ class PicturesController < ApplicationController
     if params[:back]
        render :new
     else
-      if @blog.save
+      if @picture.save
         redirect_to new_picture_path, notice: '投稿しました。'
       else
         render :new
@@ -28,7 +28,7 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def edit
@@ -43,7 +43,7 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture.destroy(picture_params)
+    @picture.destroy
     redirect_to pictures_path, notice: "ブログを消去しました!"
   end
 
