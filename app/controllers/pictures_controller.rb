@@ -20,7 +20,9 @@ class PicturesController < ApplicationController
        render :new
     else
       if @picture.save
-        redirect_to new_picture_path, notice: '投稿しました。'
+        # redirect_to pictures_path, notice: '投稿しました。'
+        PictureMailer.picture_mail(@picture).deliver
+        redirect_to pictures_path, notice: 'Contact was successfully created.'
       else
         render :new
       end
