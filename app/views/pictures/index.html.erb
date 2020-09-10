@@ -9,6 +9,7 @@
 <% @picture.each do |blog| %>
   <tr>
     <td><%= picture.content %></td>
+    <td><%= image_tag picture.image.url %></td>
     <td><%= picrure.user.name %></td>
     <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
     <td><%= link_to "投稿を編集する", edit_picture_path(picture.id), data: { confirm: '本当に編集していいですか？' } %></td>
