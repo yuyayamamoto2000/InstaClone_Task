@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def check_user
     if current_user.id != @picture.user.id
       flash[:notice] = "権限がありません"
-      redirect_to feeds_path
+      redirect_to pictures_path
     end
   end
 end
