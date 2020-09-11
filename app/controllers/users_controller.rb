@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @user = User.find(params[:id])
     @favorites = Favorite.where(user_id: @user.id)
   end
 
