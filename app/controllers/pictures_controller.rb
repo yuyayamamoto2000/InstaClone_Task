@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
   before_action :check_user, only: [:edit,:update,:destroy]
 
   def index
-    @picture = Picture.all
+    @pictures = Picture.all
   end
 
   def new
